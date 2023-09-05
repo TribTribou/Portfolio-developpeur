@@ -22,7 +22,6 @@ const Navigation = styled.nav`
     position: relative;
     letter-spacing: 0.1em;
     text-shadow: red 1px 0 10px;
-    text-decoration: none;
 
     &:before {
       text-decoration: none;
@@ -48,6 +47,7 @@ const Navigation = styled.nav`
       border-radius: 10px;
       padding: 2px 10px; // Vous pouvez ajuster le rembourrage selon vos besoins
       box-shadow: red 1px 0 15px 5px;
+      text-decoration: none;
     }
   }
 `;
@@ -58,7 +58,7 @@ const Banner = () => {
     <BannerWrapper>
       <Title>Portfolio BERNARD Florian</Title>
       <Navigation>
-        <NavLink exact to="/">Accueil</NavLink>
+        <NavLink exact to="/Portfolio-developpeur/">Accueil</NavLink>
         <NavLink to="/cv">CV</NavLink>
         <NavLink to="/competences">Competences</NavLink>
         <NavLink to="/contact">Contact</NavLink>

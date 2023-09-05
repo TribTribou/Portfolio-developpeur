@@ -43,7 +43,7 @@ ReactDOM.render(
         <Router>
             <Banner />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/Portfolio-developpeur/" element={<Home />} />
                 <Route path="/cv" element={<Cv />} />
                 <Route path="/competences" element={<Competence />} />
                 <Route path="/contact" element={<Contact />} />
