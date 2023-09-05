@@ -39,6 +39,7 @@ const Navigation = styled.nav`
     }
 
     &:hover:before {
+      text-decoration: none;
       transform: scaleX(1);
       transform-origin: bottom left;
     }
