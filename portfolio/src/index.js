@@ -25,12 +25,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: red;
-    text-decoration: none; /* Supprimer les soulignements par défaut des liens */
+    text-decoration: none;
     text-shadow: red 1px 0 10px;
   }
 
   a:hover {
-    text-decoration: underline; /* Ajouter un soulignement au survol des liens */
     text-shadow: red 1px 10px 10px;
   }
 `;
