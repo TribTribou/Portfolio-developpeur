@@ -8,20 +8,22 @@ const BannerWrapper = styled.div`
   justify-content: space-between;
   background-color: black;
   color: white;
-  padding: 10px 50px;
+  padding: 1.2vw 5vw;
+  z-index: 2;
 `;
 
 const Title = styled.h1`
   margin: 0;
+  font-size: 2vw;
 `;
 
 const Navigation = styled.nav`
   a {
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 2vw;
     position: relative;
     letter-spacing: 0.1em;
-    text-shadow: red 1px 0 10px;
+    text-shadow: red 1px 0 1.2vw;
 
     &:before {
       text-decoration: none;
@@ -29,10 +31,10 @@ const Navigation = styled.nav`
       position: absolute;
       width: 100%;
       height: 0.15em;
-      bottom: -5px;
+      bottom: -0.6vw;
       left: 0;
       background-color: red;
-      box-shadow: red 1px 0 15px 5px;
+      box-shadow: red 1px 0 1.8vw 0.5vw;
       transform: scaleX(0);
       transform-origin: bottom right;
       transition: transform 0.3s ease;
@@ -45,9 +47,9 @@ const Navigation = styled.nav`
     }
 
     &.active {
-      border-radius: 10px;
-      padding: 2px 10px; // Vous pouvez ajuster le rembourrage selon vos besoins
-      box-shadow: red 1px 0 15px 5px;
+      border-radius: 1vw;
+      padding: 0.2vw 1vw; // Vous pouvez ajuster le rembourrage selon vos besoins
+      box-shadow: red 1px 0 1.8vw 0.5vw;
       text-decoration: none;
     }
   }

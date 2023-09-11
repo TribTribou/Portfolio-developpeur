@@ -7,7 +7,8 @@ import VirgoFont from './fonts/virgo.ttf';
 import Banner from './Components/Banner/Banner';
 import Cv from './Pages/Cv/Cv';
 import Competence from './Pages/Compétence/Compétence';
-import Contact from './Pages/Contact/contact'
+import Contact from './Pages/Contact/contact';
+import BackgroundLightbarblur from './Components/BackgroundAnimated/Background';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -17,20 +18,23 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #3e3b38;
+    background: radial-gradient(#444141f0,#282828cc);
     color: white;
     font-family: 'Virgo', sans-serif;
-    text-shadow: white 1px 0 3px;
+    text-shadow: white 1px 0 1.2vw;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.2vw;
   }
 
   a {
     color: red;
     text-decoration: none;
-    text-shadow: red 1px 0 10px;
+    text-shadow: red 1px 0 1.2vw;
   }
 
   a:hover {
-    text-shadow: red 1px 10px 10px;
+    text-shadow: red 1px 1.2vw 1.2vw;
   }
 `;
 
@@ -39,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
     <React.StrictMode>
         <GlobalStyle />
+        <BackgroundLightbarblur/>
         <Router>
             <Banner />
             <Routes>

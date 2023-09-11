@@ -8,17 +8,46 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* 100% de la hauteur de la vue */
-  margin: 50px;
+  height: 80vh;
+  margin: 3vw;
   background-color: black;
-  border-radius: 20px;
+  border-radius: 1.8vw;
+
+  @media (max-width: 700px) {
+    height: 60vh;
+    margin-top: 10%;
+  }
+
+  @media (max-width: 500px) {
+    height: 40vh;
+    margin-top: 15%;
+  }
+
+  @media (max-width: 350px) {
+    height: 30vh;
+  }
 `;
 
 const ImageCompStyle = styled.img `
 width: auto;
-  height: 600px;
+  height: 60vh;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 2.4vw;
+
+  @media (max-width: 700px) {
+    height: 45vh;
+    margin-bottom: 1.8vw;
+  }
+
+  @media (max-width: 500px) {
+    height: 30vh;
+    margin-bottom: 1.2vw;
+  }
+
+  @media (max-width: 350px) {
+    height: 20vh;
+    margin-bottom: 0.8vw;
+  }
 `;
 
 function Competence() {
@@ -27,7 +56,7 @@ function Competence() {
       <header>
         <h1>Carte mentale de mes competences:</h1>
       </header>
-      <Link to="https://miro.com/app/board/uXjVMsWG4FI=/?share_link_id=729761204349">
+      <Link to="https://miro.com/app/board/uXjVMsWG4FI=/?share_link_id=729761204349" target="_blank">
       <ImageCompStyle
         src={ImageCompetences}
         alt="Carte mentale de compétences"

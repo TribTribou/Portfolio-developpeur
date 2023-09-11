@@ -5,52 +5,53 @@ const Centerbox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Utilisez la hauteur de la vue pour centrer verticalement */
+  height: 100vh;
 `;
 
 const ContactWrapper = styled.div`
   background-color: black;
   color: white;
-  padding: 10px 20px; /* Réduisez la marge intérieure */
-  width: 60%; /* Réglez la largeur */
+  padding: 1.2vw 2.4vw;
+  width: 60%;
   min-width: 400px;
+  opacity: 0.9;
 `;
 
 const Form = styled.form`
   label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.6vw;
   }
 
   input[type="text"],
   textarea {
     width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
+    padding: 0.6vw;
+    margin-bottom: 1.2vw;
   }
 
   input[type="submit"] {
     background-color: black;
-    box-shadow: red 1px 0 15px 5px;
+    box-shadow: red 1px 0 1.8vw 0.6vw;
     font-family: 'Virgo', sans-serif;
-    text-shadow: red 1px 0 3px;
+    text-shadow: red 1px 0 0.36vw;
     color: red;
-    padding: 10px 20px;
+    padding: 1.2vw 2.4vw;
     cursor: pointer;
     border: red;
-    border-radius: 20px;
+    border-radius: 1.8vw;
   }
 
   input[type="submit"]:hover {
     background-color: red;
-    box-shadow: red 1px 0 15px 5px;
+    box-shadow: red 1px 0 1.8vw 0.6vw;
     font-family: 'Virgo', sans-serif;
-    text-shadow: black 1px 0 3px;
+    text-shadow: black 1px 0 0.36vw;
     color: black;
-    padding: 10px 20px;
+    padding: 1.2vw 2.4vw;
     cursor: pointer;
     border: red;
-    border-radius: 20px;
+    border-radius: 1.8vw;
   }
 
   display: flex;
