@@ -1,10 +1,7 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
+
 
 const StyledBackground = styled.div`
 body {
@@ -15,10 +12,6 @@ body {
     -moz-overflow-Y: hidden;
     -o-overflow-Y: hidden;
     overflow-y: hidden;
-    -webkit-animation: fadeIn 1 1s ease-out;
-    -moz-animation: fadeIn 1 1s ease-out;
-    -o-animation: fadeIn 1 1s ease-out;
-    animation: fadeIn 1 1s ease-out;
     z-index: -1;
 }
 
@@ -173,25 +166,6 @@ body {
   100%{top: -100vh; opacity: 0;}
 }
 
-@-webkit-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@-moz-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@-o-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
 
 @-webkit-keyframes fadeOut{
   0%{opacity: 0;}
