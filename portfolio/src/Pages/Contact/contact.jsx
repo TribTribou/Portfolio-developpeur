@@ -6,6 +6,7 @@ const Centerbox = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-top: 3vh;
 `;
 
 const ContactWrapper = styled.div`
