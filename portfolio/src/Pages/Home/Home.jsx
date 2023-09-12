@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import AperçuP2 from '../../images/AperçuP2.PNG'
 import AperçuP3 from '../../images/AperçuP3.png'
@@ -6,8 +6,49 @@ import AperçuP4 from '../../images/AperçuP4(2).png'
 import AperçuP5 from '../../images/AperçuP5.jpg'
 import AperçuP6 from '../../images/AperçuP6(2).png'
 import AperçuP7 from '../../images/AperçuP7.png'
+import ProfileBlock from '../../Components/Profil/Profil'
+
+const StyledArrow = styled.div`
+margin-bottom: -4vh;
+`
 
 const PageContainer = styled.div`
+position: relative;
+height: 88vh;
+padding-top: 5%;
+`
+
+const ProjetButton = styled.button`
+  position: absolute;
+  top:30%;
+  right:2%;
+  z-index: 2;
+  background-color: black;
+  opacity: 0.85;
+  color:red;
+  text-shadow: red 1px 0 1.5vw;
+  box-shadow: red 1px 0 1.8vw 0.5vw;
+  border-radius: 20vh;
+  height: 10vh;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  /* Ajoutez d'autres styles selon vos besoins */
+
+  &:hover {
+    background-color: #280004;
+    text-decoration: none;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-size: 1.3rem;
+    text-shadow: red 1px 0 3vw;
+    box-shadow: red 1px 0 1.8vw 1.5vw;
+  }
+`;
+
+const ProjetContainer = styled.div`
 background-color: black;
 padding: 1px 3vh 0 3vh;
 margin: 2% 5% 2% 5%;
@@ -177,10 +218,27 @@ const LinkText = styled.p`
 `;
 
 function Home() {
+  const projetContainerRef = useRef();
+
+  const scrollToProjects = () => {
+    // Utilisez la méthode `scrollIntoView` pour faire défiler la page vers la section projetContainerRef
+    projetContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProfil = () => {
+    window.scrollTo({
+      top: 0, // Définissez la position à laquelle vous souhaitez faire défiler la page, ici, tout en haut (0)
+      behavior: 'smooth', // Utilisez un défilement en douceur
+    });
+  };  
+
   return (
     <div className="App">
       <header className="App-header">
+        <ProfileBlock scrollToProjects={scrollToProjects} />
         <PageContainer>
+          <ProjetButton onClick={scrollToProfil}> <StyledArrow>^</StyledArrow> <br /> | </ProjetButton>
+          <ProjetContainer ref={projetContainerRef}>
         <h2>
         Liste des projets:
         </h2>
@@ -223,6 +281,7 @@ function Home() {
           <StyledLink href="https://github.com/TribTribou/Backend" target="_blank"> "Developpez le back-end d'un site de notation de livres"</StyledLink></LinkText>
           </StyledLinkContainer>
         </LinkList>
+        </ProjetContainer>
         </PageContainer>
       </header>
     </div>
