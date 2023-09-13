@@ -24,8 +24,19 @@ const GlobalStyle = createGlobalStyle`
     text-shadow: white 1px 0 1.2vw;
     max-width: 100%;
     margin: 0 auto;
-    font-size: 1.2vw;
-  }
+    font-size: 2.4vh;
+
+    @media (max-width: 1200px) {
+      font-size: 2vh;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: 1.6vh;
+    }
+
+    @media (max-width: 700px) {
+      text-shadow: white 0 0 0.5vw;
+    }
 
   a {
     color: red;

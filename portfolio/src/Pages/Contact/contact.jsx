@@ -16,6 +16,12 @@ const ContactWrapper = styled.div`
   width: 60%;
   min-width: 400px;
   opacity: 0.9;
+
+  @media (max-width: 550px) {
+    width: 40%;
+    min-width: 150px;
+    font-size: smaller;
+  }
 `;
 
 const Form = styled.form`

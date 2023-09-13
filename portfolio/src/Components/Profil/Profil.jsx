@@ -3,18 +3,30 @@ import styled, { keyframes } from 'styled-components'
 import ProfilPicture from '../../images/Profil_picture.jpg'
 import TypingText from '../Animations/TypingText'
 
+const ProfileBlockContainer = styled.div`
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100%;
+`
+
+const ProfileImageContainer = styled.div`
+width: 100%;
+height: 25%;
+`
+
 const floatAnimation = keyframes`
-0% { top:28%; }
-25% { top:27%;}
-75% { top:29%; }
-100% { top:28%;}
+0% { top: 20%; }
+25% { top: 19%;}
+75% { top: 21%; }
+100% { top: 20%;}
 `
 
 const ProfileContainer = styled.div`
-  position: relative;
-  height:85vh;
-  padding: 7% 1% 1% 1%;
   text-align: center;
+  width:80%;
   /* Ajoutez d'autres styles selon vos besoins */
 `;
 
@@ -22,10 +34,10 @@ const ProfileImage = styled.img`
   border: 0.8vh solid black;
   box-shadow: red 1px 0 1.2vw 0.5vw;
   border-radius: 50%;
-  max-width: 200px;
-  position: absolute;
-  top:28%;
-  right:6%;
+  max-width: 15vh;
+  position:absolute;
+  right: 50%;
+  transform: translate(55%, 10%);
   animation-name: ${floatAnimation};
   animation-duration: 8s;
   animation-iteration-count: infinite;
@@ -33,15 +45,20 @@ const ProfileImage = styled.img`
 `;
 
 const ProfileDescription = styled.p`
+  display: flex;
+  justify-content:center;
+  align-items:center;
   background: #000000B3;
   border-radius: 20vh;
   max-width: 100%;
-  height: 40vh;
+  height: 30vh;
   color: white;
-  font-size: 2.9vh;
-  padding: 5% 20% 0 0;
-  margin: 5% 2% 5% 2%;
   /* Ajoutez d'autres styles selon vos besoins */
+
+  @media (max-width: 800px) {
+    height: 50vh;
+    flex-wrap: wrap;
+  }
 `;
 
 const ProfileButton = styled.button`
@@ -76,13 +93,17 @@ function ProfileBlock({ scrollToProjects }) {
         scrollToProjects();
       };
   return (
+    <ProfileBlockContainer>
     <ProfileContainer>
-      <ProfileImage src={ProfilPicture} alt="Image d'un renard dans un champ de lavande" />
+      <ProfileImageContainer>
+        <ProfileImage src={ProfilPicture} alt="Image d'un renard dans un champ de lavande" />
+      </ProfileImageContainer>
       <ProfileDescription>
         <TypingText/>
       </ProfileDescription>
       <ProfileButton onClick={handleButtonClick}> | <br/> V</ProfileButton>
     </ProfileContainer>
+    </ProfileBlockContainer>
   );
 }
 

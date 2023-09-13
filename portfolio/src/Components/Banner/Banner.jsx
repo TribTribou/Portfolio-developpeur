@@ -14,11 +14,26 @@ const BannerWrapper = styled.div`
   color: white;
   padding: 1.2vw 5vw;
   z-index: 2;
+
+  @media (max-width: 550px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 2%;
+  }
 `;
 
 const Title = styled.h1`
   margin: 0;
-  font-size: 2vw;
+  font-size: 3.5vh;
+
+  @media (max-width: 1200px) {
+    font-size: 3vh;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 2.5vh;
+  }
 `;
 
 const Navigation = styled.nav`
@@ -28,6 +43,14 @@ const Navigation = styled.nav`
     position: relative;
     letter-spacing: 0.1em;
     text-shadow: red 1px 0 1.2vw;
+
+    @media (max-width: 550px) {
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding-bottom: 2%;
+    }
 
     &:before {
       text-decoration: none;

@@ -1,27 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
-import AperçuP2 from '../../images/AperçuP2.PNG'
-import AperçuP3 from '../../images/AperçuP3.png'
-import AperçuP4 from '../../images/AperçuP4(2).png'
-import AperçuP5 from '../../images/AperçuP5.jpg'
-import AperçuP6 from '../../images/AperçuP6(2).png'
-import AperçuP7 from '../../images/AperçuP7.png'
-import ProfileBlock from '../../Components/Profil/Profil'
+import AperçuP2 from '../../images/AperçuP2.PNG';
+import AperçuP3 from '../../images/AperçuP3.png';
+import AperçuP4 from '../../images/AperçuP4(2).png';
+import AperçuP5 from '../../images/AperçuP5.jpg';
+import AperçuP6 from '../../images/AperçuP6(2).png';
+import AperçuP7 from '../../images/AperçuP7.png';
+import ProfileBlock from '../../Components/Profil/Profil';
+import ModalLauncher from '../../Components/ModalesDescription/ModaleLauncher';
 
-const StyledArrow = styled.div`
-margin-bottom: -4vh;
-`
 
 const PageContainer = styled.div`
-position: relative;
+text-align:center;
 height: 88vh;
 padding-top: 5%;
 `
 
 const ProjetButton = styled.button`
-  position: absolute;
-  top:30%;
-  right:2%;
   z-index: 2;
   background-color: black;
   opacity: 0.85;
@@ -29,7 +24,7 @@ const ProjetButton = styled.button`
   text-shadow: red 1px 0 1.5vw;
   box-shadow: red 1px 0 1.8vw 0.5vw;
   border-radius: 20vh;
-  height: 10vh;
+  height: 5vh;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: bold;
@@ -51,11 +46,11 @@ const ProjetButton = styled.button`
 const ProjetContainer = styled.div`
 background-color: black;
 padding: 1px 3vh 0 3vh;
-margin: 2% 5% 2% 5%;
+margin: 0.5% 5% 2% 5%;
 width: 85%;
 height: 80vh;
 border-radius: 2vh;
-opacity: 0.95;
+opacity: 0.9;
 
 @media (max-width: 1200px) {
     height: 75vh;
@@ -155,7 +150,7 @@ opacity: 0.95;
 
 const ImageAperçu = styled.img`
   width: auto;
-  height: 30vh;
+  height: 35vh;
   object-fit: fill;
   position: relative;
   bottom: 6em;
@@ -178,15 +173,9 @@ const ImageAperçu = styled.img`
   }
 
   @media (max-width: 600px) {
-    height: 35vh;
-    left:15em;
-    bottom:13em;
+    left:0;
   }
 
-  @media (max-width: 600px) {
-    left:20em;
-    bottom:15em;
-  }
 `;
 
 const LinkText = styled.p`
@@ -219,6 +208,7 @@ const LinkText = styled.p`
 
 function Home() {
   const projetContainerRef = useRef();
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const scrollToProjects = () => {
     // Utilisez la méthode `scrollIntoView` pour faire défiler la page vers la section projetContainerRef
@@ -230,60 +220,70 @@ function Home() {
       top: 0, // Définissez la position à laquelle vous souhaitez faire défiler la page, ici, tout en haut (0)
       behavior: 'smooth', // Utilisez un défilement en douceur
     });
-  };  
+  };
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <ProfileBlock scrollToProjects={scrollToProjects} />
         <PageContainer>
-          <ProjetButton onClick={scrollToProfil}> <StyledArrow>^</StyledArrow> <br /> | </ProjetButton>
+          <ProjetButton onClick={scrollToProfil}> ^ </ProjetButton>
           <ProjetContainer ref={projetContainerRef}>
         <h2>
         Liste des projets:
         </h2>
         <LinkList>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P2')}>
           <ImageAperçu src={AperçuP2} 
           alt="aperçu site Booki"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://tribtribou.github.io/Site_Booki-Projet2OC-/" target="_blank"> "Creez la page d'accueil d'une agence de voyage avec HTML et CSS"
-          </StyledLink></LinkText>
+          <LinkText>Projet Booki - Html et CSS
+          </LinkText>
           </StyledLinkContainer>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P3')}>
           <ImageAperçu src={AperçuP3} 
           alt="aperçu site Sophie bluel, Architecte d'intérieur"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://drive.google.com/file/d/1X80PkV6ciIlhMfB4_9l4IoT2IDIk0joL/view?usp=sharing" target="_blank"> "Creez une page web dynamique avec JavaScript"</StyledLink>- Pdf de ma presentation du projet.</LinkText>
+          <LinkText>Projet Sophie Bluel - Javascript
+          </LinkText>
           </StyledLinkContainer>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P4')}>
           <ImageAperçu src={AperçuP4} 
           alt="aperçu présentation projet 4 - Planifiez le developpement du site de votre client"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://drive.google.com/file/d/1zqWnlwtqgJTGFl_eXSA1EVqEDHl8LBmx/view?usp=sharing" target="_blank"> "Planifiez le developpement du site de votre client" </StyledLink>- Pdf de ma presentation du projet.</LinkText>
+          <LinkText>Projet Menu Maker - Planification
+          </LinkText>
           </StyledLinkContainer>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P5')}>
           <ImageAperçu src={AperçuP5} 
           alt="aperçu Site Photographe Nina Carducci - projet Debug & Optimisation"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://tribtribou.github.io/nina-carducci.github.io/" target="_blank"> "Debuggez et optimisez un site de photographe"</StyledLink></LinkText>
+          <LinkText>Projet Nina Carducci - Debug et Optimisation
+          </LinkText>
           </StyledLinkContainer>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P6')}>
           <ImageAperçu src={AperçuP6} 
           alt="aperçu Site de location Kasa - projet React"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://tribtribou.github.io/P6_kasa/" target="_blank"> "Creer un site de location avec React"</StyledLink></LinkText>
+          <LinkText>Projet Kasa - React
+          </LinkText>
           </StyledLinkContainer>
-          <StyledLinkContainer>
+          <StyledLinkContainer onClick={() => openModal('P7')}>
           <ImageAperçu src={AperçuP7} 
           alt="aperçu Backend"/>
-          <LinkText>Projet de formation 'Developpeur Web' OpenClassroom:
-          <StyledLink href="https://github.com/TribTribou/Backend" target="_blank"> "Developpez le back-end d'un site de notation de livres"</StyledLink></LinkText>
+          <LinkText>Projet Mon Vieux Grimoire - Backend
+          </LinkText>
           </StyledLinkContainer>
         </LinkList>
         </ProjetContainer>
         </PageContainer>
       </header>
+      {selectedProject && (
+        <ModalLauncher selectedProject={selectedProject} onClose={closeModal} />
+      )}
     </div>
   );
 }
