@@ -90,7 +90,7 @@ const Navigation = styled.nav`
 const Banner = () => {
   return (
     <BannerWrapper>
-      <Title>Portfolio BERNARD Florian</Title>
+      <Title>Portfolio Florian BERNARD</Title>
       <Navigation>
         <NavLink exact to="/Portfolio-developpeur/">Accueil</NavLink>
         <NavLink to="/cv">CV</NavLink>
