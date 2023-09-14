@@ -29,6 +29,14 @@ padding: 1%;
     background-color: red;
     color: black;
 }
+
+@media (max-width: 600px) {
+  font-size: 0.7vh;
+
+  &:hover {
+    font-size: 0.8vh;
+}
+}
 `
 
 const ModalContainer = styled.div`
@@ -48,6 +56,12 @@ const ModalContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 3vh;
+
+  @media (max-width: 600px) {
+    font-size: 1.7vh;
+    text-shadow: white 0px 0 0vw;
+    width: 250px;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -55,18 +69,33 @@ const SubTitle = styled.h2`
   text-shadow: #8d007d 1px 0 1.2vw;
   font-size: 2vh;
   margin-top: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 1.5vh;
+    text-shadow: #8d007d 0 0 0vw;
+  }
 `;
 
 const Paragraph = styled.p`
   font-size: 1.5vh;
   line-height: 1.5;
   margin-top: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 1vh;
+    text-shadow: white 0 0 0;
+  }
 `;
 
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 1vh;
+    text-shadow: white 0 0 0;
+  }
 `;
 
 
@@ -75,6 +104,11 @@ const ProjectLink = styled.a`
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
+
+  @media (max-width: 600px) {
+    font-size: 1vh;
+    text-shadow: red 0 0 0;
+  }
 `;
 
 function ModalP2({ onClose }) {

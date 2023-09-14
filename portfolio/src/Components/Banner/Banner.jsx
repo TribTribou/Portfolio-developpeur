@@ -34,6 +34,10 @@ const Title = styled.h1`
   @media (max-width: 1000px) {
     font-size: 2.5vh;
   }
+
+  @media (max-width: 600px) {
+    font-size: 1.8vh;
+  }
 `;
 
 const Navigation = styled.nav`

@@ -14,7 +14,7 @@ width: 100%;
 
 const ProfileImageContainer = styled.div`
 width: 100%;
-height: 25%;
+height: 15%;
 `
 
 const floatAnimation = keyframes`
@@ -42,6 +42,10 @@ const ProfileImage = styled.img`
   animation-duration: 8s;
   animation-iteration-count: infinite;
   /* Ajoutez d'autres styles selon vos besoins */
+
+  @media (max-width: 600px) {
+    transform: translate(55%, -30%);
+  }
 `;
 
 const ProfileDescription = styled.p`
@@ -58,6 +62,8 @@ const ProfileDescription = styled.p`
   @media (max-width: 800px) {
     height: 50vh;
     flex-wrap: wrap;
+    border-radius: 10vh;
+    text-shadow: white 0px 0 0vw;
   }
 `;
 
